@@ -5,17 +5,18 @@ public class SearchCharacterInString {
     // Function to search specific character in given string
     static ArrayList<Integer> SearchCharacter( String str, char target){
         ArrayList<Integer> searchIndex = new ArrayList<Integer>();
-        String strcopy = str.toLowerCase();
+        String strCopy = str.toLowerCase();
+        // To check edge case whether string has length equal to 0
         if(str.length() ==  0){
             return searchIndex ;
         }
-
+        // To iterate through the string and store the indexes found in searchIndex arrayList
         for(int index = 0; index < str.length(); index++){
-            if(strcopy.charAt(index) == target){
+            if(strCopy.charAt(index) == target){
                 searchIndex.add(index);
             }
-
         }
+        // If above for loop doesn't find character means searchIndex returns size 0, otherwise it return size more tha zero
         return  searchIndex;
     }
 
@@ -33,6 +34,7 @@ public class SearchCharacterInString {
 
         ArrayList<Integer> found = SearchCharacter(str,ch);
         int size = found.size();
+
         if( size == 0){
             System.out.println("The character you have searched for is not found in the given string");
         }

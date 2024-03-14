@@ -27,6 +27,12 @@ public class EvenNumberOfDigits {
     // Function to find total number of digits
     static int TotalDigits(int num){
         int digit = 0;
+        if(num < 0){
+            num= num * -1;
+        }
+        if(num == 0){
+            return 1;
+        }
         while (num > 0){
             digit++;
             num = num/10;
